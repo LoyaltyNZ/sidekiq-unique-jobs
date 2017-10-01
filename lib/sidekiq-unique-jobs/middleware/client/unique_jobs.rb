@@ -6,7 +6,7 @@ module SidekiqUniqueJobs
       class UniqueJobs
         attr_reader :item, :worker_class
 
-        def call(worker_class, item, queue)
+        def call(worker_class, item, queue, redis_pool)
           @worker_class = worker_class_constantize(worker_class)
           @item = item
 
